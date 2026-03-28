@@ -1,0 +1,15 @@
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+footer p {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(124, 124, 124);
+  width: 1200px;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 0px 0px 15px 15px;
+}
