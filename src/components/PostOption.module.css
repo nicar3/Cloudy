@@ -1,0 +1,31 @@
+nav {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: aliceblue;
+    width: 120px;
+    border: 2px solid black;
+    border-radius: 5px 0px 5px 5px;
+    z-index: 100;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.option {
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.option:hover {
+    background-color: rgb(221, 238, 252);
+}
+
+.option:last-child:hover {
+    background-color: rgb(255, 72, 72);
+}

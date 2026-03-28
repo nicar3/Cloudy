@@ -1,0 +1,80 @@
+.container {
+  background-color: rgb(170, 170, 170);
+  width: 500px;
+
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.loginTitle {
+  text-align: center;
+  padding: 10px;
+  margin: 0;
+  background-color: rgb(124, 124, 124);
+  color: white;
+}
+
+.loginFrom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 30px;
+  background-color: #f5f7fa;
+}
+
+.loginInputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.loginFrom label {
+  color: black;
+  margin-bottom: -30px;
+  font-size: 20px;
+}
+
+.loginInput {
+  padding: 12px;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.loginButtons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.loginButtons button {
+  padding: 10px 20px;
+  border: 2px solid black;
+  border-radius: 8px;
+  background-color: aliceblue;
+  border: 2px solid black;
+  transition: 0.2s;
+}
+
+.loginButtons button:last-child {
+  width: 200px;
+}
+
+.loginButtons button:first-child:hover {
+  background-color: rgb(255, 72, 72);
+  cursor: pointer;
+}
+
+.loginButtons button:last-child:hover {
+  background-color: rgb(221, 238, 252);
+  cursor: pointer;
+}

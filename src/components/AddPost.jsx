@@ -1,7 +1,7 @@
 import { useState } from "react";
 import classes from "./AddPost.module.css";
 
-export default function AddPost({ onModalClose, onAddPost }) {
+export default function AddPost({ modalToggle, onAddPost }) {
   const [postTitle, setPostTitle] = useState("");
   const [postBody, setPostBody] = useState("");
 
@@ -16,16 +16,17 @@ export default function AddPost({ onModalClose, onAddPost }) {
   function addPostHandler(e) {
     e.preventDefault();
     let postData = {
+      id: crypto.randomUUID(),
       title: postTitle,
       body: postBody,
     };
     onAddPost(postData);
-    onModalClose();
+    modalToggle();
   }
 
   return (
     <div className={classes.container}>
-      <h1>Dodaj post</h1>
+      <h1 className={classes.addPostTitle}>Dodaj post</h1>
       <form method="post" className={classes.addPostForm}>
         <label htmlFor="addPostInput">Tytuł:</label>
         <input
@@ -43,7 +44,7 @@ export default function AddPost({ onModalClose, onAddPost }) {
           onChange={postChangeHandler}
         />
         <div className={classes.addPostButtons1}>
-          <button type="button" onClick={onModalClose}>
+          <button type="button" onClick={modalToggle}>
             Anuluj
           </button>
           <button onClick={addPostHandler}>Dodaj</button>

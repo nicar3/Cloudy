@@ -1,7 +1,7 @@
 import { useState } from "react";
 import classes from "./PostsList.module.css";
 import Post from "./Post";
-import Module from "./Modal";
+import ModalAddPost from "./ModalAddPost";
 import AddPost from "./AddPost";
 
 export default function PostsList({ isModalVisible, toggleModalHandler }) {
@@ -11,21 +11,25 @@ export default function PostsList({ isModalVisible, toggleModalHandler }) {
     setPosts((post) => [data, ...post]);
   }
 
+  function deletePost(id) {
+    setPosts(prev => prev.filter(post => post.id !== id));
+  }
+
   return (
     <>
       {isModalVisible && (
-        <Module>
+        <ModalAddPost onModalChange={toggleModalHandler}>
           <AddPost
-            onModalClose={toggleModalHandler}
+            modalToggle={toggleModalHandler}
             onAddPost={addPostHandler}
           />
-        </Module>
+        </ModalAddPost>
       )}
       <main>
         <div className={classes.container}>
           {posts.length > 0 &&
             posts.map((post) => (
-              <Post key={post.body} title={post.title} body={post.body} />
+              <Post key={post.id} id={post.id} title={post.title} body={post.body} onPostDelete={deletePost}/>
             ))}
             {posts.length===0 && ( <h3 style={{textAlign: 'center'}}>Nie ma żanego postu...</h3> )}
         </div>

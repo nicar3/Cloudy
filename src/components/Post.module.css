@@ -3,7 +3,7 @@
     border: 2px solid black;
     width: 310px;
     height: 500px;
-
+    position: relative;
     display: flex;
     flex-direction: column;
 }
@@ -37,10 +37,11 @@
     font-weight: bold;
     height: 40px;
     width: 40px;
+    z-index: 1;
 }
 
 .postButton:hover {
-    background-color: rgb(255, 72, 72);
+    background-color: rgb(221, 238, 252);
     cursor: pointer;
 }
 
